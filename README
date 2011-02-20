@@ -4,6 +4,9 @@ Convert different identifier naming styles
 
 ## Usage
 
+(ns your.namespace
+ (:use nl.zeekat.identifiers))
+
 (class-name "test-me") => "TestMe"
 (field-name "test-me") => "testMe"
 (lisp-name "SomeCamelCase") => "some-camel-case"
