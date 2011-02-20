@@ -1,0 +1,17 @@
+# identifiers
+
+Convert different identifier naming styles
+
+## Usage
+
+(class-name "test-me") => "TestMe"
+(field-name "test-me") => "testMe"
+(lisp-name "SomeCamelCase") => "some-camel-case"
+
+## License
+
+Copyright (C) 2011 Joost Diepenmaat, Zeekat Softwareontwikkeling
+
+joost@zeekat.nl
+
+Distributed under the Eclipse Public License, the same as Clojure.
