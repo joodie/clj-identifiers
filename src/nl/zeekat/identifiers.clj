@@ -1,5 +1,5 @@
 (ns nl.zeekat.identifiers
-  (:require [clojure.contrib.string :as string]))
+  (:require [clojure.string :refer [split]]))
 
 (defn- upcase-first
   "uppercase the first letter of the string"
@@ -9,14 +9,14 @@
 (defn field-name
   "convert a dashed-name to a camelCaseName"
   [^String name]
-  (let [[first-word & other-words] (string/split #"-" name)] 
+  (let [[first-word & other-words] (split name #"-")] 
     (apply str first-word
            (map upcase-first other-words))))
 
 (defn class-name
   "convert a dashed-name to a CamelCaseName"
   [^String name]
-  (apply str (map upcase-first (string/split #"-" name))))
+  (apply str (map upcase-first (split name #"-"))))
 
 (defn lisp-name
   "convert a camelCaseName to a dashed-name"
