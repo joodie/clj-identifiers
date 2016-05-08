@@ -1,3 +1,6 @@
 language: clojure
-lein: lein2
-script: lein2 doo phantom test once && lein2 test
+script: 
+  
+  - wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -O ./lein
+  - chmod +x ./lein
+  - ./lein doo phantom test once && ./lein test
