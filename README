@@ -11,9 +11,14 @@ Convert different identifier naming styles
 (field-name "test-me") => "testMe"
 (lisp-name "SomeCamelCase") => "some-camel-case"
 
+## Changes
+
+ 0.2.0 - Suppports both clojure and clojurescript
+
 ## License
 
-Copyright (C) 2011 Joost Diepenmaat, Zeekat Softwareontwikkeling
+Copyright (C) 2011 - 2016 Joost Diepenmaat, Zeekat
+Softwareontwikkeling
 
 joost@zeekat.nl
 

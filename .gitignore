@@ -1,5 +1,10 @@
-pom.xml
+pom.xml*
+.lein*
 *jar
-lib
-classes
+/lib
+/classes
 *~
+/resources
+/out
+/target
+

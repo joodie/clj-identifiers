@@ -1,10 +1,25 @@
 (ns nl.zeekat.identifiers
   (:require [clojure.string :refer [split]]))
 
+(defn- upcase-char
+  [c]
+  #?(:clj (Character/toUpperCase c)
+     :cljs (.toUpperCase c)))
+
+(defn- downcase-char
+  [c]
+  #?(:clj (Character/toLowerCase c)
+     :cljs (.toLowerCase c)))
+
+(defn- char-upper-case?
+  [c]
+  #?(:clj (Character/isUpperCase c)
+     :cljs (= (.toUpperCase c) c)))
+
 (defn- upcase-first
   "uppercase the first letter of the string"
   [^String s]
-  (apply str (Character/toUpperCase (first s)) (rest s)))
+  (apply str (upcase-char (first s)) (rest s)))
 
 (defn field-name
   "convert a dashed-name to a camelCaseName"
@@ -21,7 +36,7 @@
 (defn lisp-name
   "convert a camelCaseName to a dashed-name"
   [^String name]
-  (apply str (Character/toLowerCase (first name))
-         (mapcat #(if (Character/isUpperCase %)
-                        ["-" (Character/toLowerCase %)]
-                        [%]) (rest name))))
+  (apply str (downcase-char (first name))
+         (mapcat #(if (char-upper-case? %)
+                    ["-" (downcase-char %)]
+                    [%]) (rest name))))

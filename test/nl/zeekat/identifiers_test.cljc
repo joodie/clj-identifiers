@@ -1,6 +1,7 @@
-(ns nl.zeekat.identifiers.test
-  (:use nl.zeekat.identifiers
-        clojure.test))
+(ns nl.zeekat.identifiers-test
+  (:require [nl.zeekat.identifiers :refer [class-name field-name lisp-name]]
+            #?(:cljs [cljs.test :refer-macros [deftest is]]
+               :clj [clojure.test :refer [deftest is]])))
 
 (deftest java-style
   (is (= (class-name "test-me") "TestMe"))
