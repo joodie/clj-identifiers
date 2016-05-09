@@ -2,7 +2,7 @@
   (:require [nl.zeekat.identifiers-test :as identifiers-test]
             [doo.runner :refer-macros [doo-all-tests]]))
 
-(doo-all-tests #"nl\.zeekat\.identifiers.*")
+(doo-all-tests #"nl\.zeekat\.identifiers.*test")
 
 
 

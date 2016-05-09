@@ -7,4 +7,5 @@ pom.xml*
 /resources
 /out
 /target
+/test_tmp
 

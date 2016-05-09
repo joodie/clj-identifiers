@@ -4,9 +4,11 @@
   :profiles {:dev {:dependencies [[org.clojure/clojurescript "1.8.51"]]}}
   :plugins [[lein-doo "0.1.6"]]
   :doo {:build "test"}
+  :clean-targets ^{:protect false} ["target" "test_tmp" "out"]
+  :aliases {"test-cljc" ["do" "clean," "doo" "phantom" "test" "once," "test"]}
   :cljsbuild
   {:builds [{:id "test"
              :source-paths ["src" "test"]
-             :compiler {:output-to "resources/public/js/testable.js"
+             :compiler {:output-to "test_tmp/testable.js"
                         :main nl.zeekat.identifiers-test-runner
-                        :optimizations :simple}}]})
+                        :optimizations :advanced}}]})
