@@ -1,6 +1,7 @@
 language: clojure
 script: 
-  
+  # get latest version of leiningen
+  # travis's lein2 does not support cljc source
   - wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -O ./lein
   - chmod +x ./lein
-  - ./lein doo phantom test once && ./lein test
+  - ./lein test-cljc
